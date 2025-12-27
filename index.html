@@ -1,269 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madhav K Sangeet | AI & ML Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madhav K Sangeet | AI & ML Portfolio</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f4f6f8;
-            color: #333;
-            line-height: 1.6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, #111827, #1f2933);
-            color: #ffffff;
-            padding: 50px 20px;
-            text-align: center;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 38px;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        header p {
-            margin-top: 10px;
-            font-size: 18px;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #0f172a, #020617);
+    color: #e5e7eb;
+}
 
-        /* SECTIONS */
-        section {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 50px 25px;
-            background: #ffffff;
-            border-radius: 14px;
-        }
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
 
-        h2 {
-            color: #1f2933;
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 40px;
-            position: relative;
-        }
+.hero-content {
+    animation: fadeSlide 1.2s ease forwards;
+}
 
-        h2::after {
-            content: "";
-            width: 70px;
-            height: 3px;
-            background: linear-gradient(90deg, #2563eb, #4f46e5);
-            display: block;
-            margin: 12px auto 0;
-            border-radius: 4px;
-        }
+.hero h1 {
+    font-size: 48px;
+    font-weight: 600;
+}
 
-        /* SKILLS */
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+.hero p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #cbd5f5;
+}
 
-        /* TABLE */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+/* SECTIONS */
+section {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 60px 30px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(60px);
+    animation: reveal 1s ease forwards;
+}
 
-        table th, table td {
-            padding: 12px;
-            border: 1px solid #d1d5db;
-        }
+section:nth-of-type(2) { animation-delay: 0.2s; }
+section:nth-of-type(3) { animation-delay: 0.4s; }
+section:nth-of-type(4) { animation-delay: 0.6s; }
+section:nth-of-type(5) { animation-delay: 0.8s; }
 
-        table th {
-            background-color: #f3f4f6;
-        }
+h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 35px;
+    color: #ffffff;
+}
 
-        /* PROJECTS */
-        .projects p {
-            margin: 12px 0;
-        }
+/* ABOUT */
+.about p {
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.9;
+    color: #dbeafe;
+}
 
-        /* CONTACT SECTION */
-        .contact-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
+/* SKILLS */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
 
-        .contact-card {
-            background: #f9fafb;
-            padding: 35px 25px;
-            text-align: center;
-            border-radius: 16px;
-            box-shadow: 0 12px 25px rgba(0,0,0,0.06);
-            opacity: 0;
-            transform: translateY(40px);
-            animation: slideUp 0.8s ease forwards;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.skill-card {
+    background: rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
+}
 
-        .contact-card:nth-child(1) { animation-delay: 0.2s; }
-        .contact-card:nth-child(2) { animation-delay: 0.4s; }
-        .contact-card:nth-child(3) { animation-delay: 0.6s; }
+.skill-card:hover {
+    transform: translateY(-10px);
+}
 
-        .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #e5e7eb;
+}
 
-        .icon {
-            font-size: 44px;
-            margin-bottom: 18px;
-        }
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
 
-        .contact-card h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-            color: #111827;
-        }
+/* PROJECTS */
+.projects p {
+    text-align: center;
+    margin: 14px 0;
+}
 
-        .contact-card p {
-            font-size: 16px;
-            color: #374151;
-            word-break: break-word;
-        }
+/* CONTACT */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
 
-        .contact-card a {
-            color: #2563eb;
-            font-weight: 600;
-            text-decoration: none;
-        }
+.contact-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+    padding: 35px;
+    border-radius: 18px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
+.contact-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
 
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
 
-        /* FOOTER */
-        footer {
-            background-color: #111827;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+a {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
+}
+
+/* ANIMATIONS */
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal {
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Madhav K Sangeet</h1>
-    <p>AI & ML Junior Data Analyst | Student Portfolio</p>
-</header>
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>Madhav K Sangeet</h1>
+        <p>AI & ML Junior Data Analyst | Student Portfolio</p>
+    </div>
+</div>
 
-<section>
+<!-- ABOUT -->
+<section class="about">
     <h2>About Me</h2>
     <p>
-        I am an enthusiastic and detail-oriented student with a strong interest in
-        Artificial Intelligence and Machine Learning. I enjoy solving real-world
-        problems using data and building intelligent systems. With hands-on experience
-        in Python, machine learning libraries, and data analysis, I am continuously
-        learning advanced concepts in Deep Learning and NLP. My goal is to contribute
-        to innovative projects that create meaningful impact.
+        I am an enthusiastic and detail-oriented student with a strong interest in Artificial Intelligence
+        and Machine Learning. I enjoy solving real-world problems using data and building intelligent systems.
+        With hands-on experience in Python, machine learning, and data analytics, I am continuously exploring
+        advanced areas such as Deep Learning and NLP.
     </p>
 </section>
 
+<!-- SKILLS -->
 <section>
     <h2>Skills</h2>
     <div class="skills">
-        <div>
+        <div class="skill-card">
             <h3>Programming & Libraries</h3>
-            <ul>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>Matplotlib</li>
-                <li>Scikit-learn</li>
-                <li>Pandas & NumPy</li>
-            </ul>
+            <p>Python, SQL, Pandas, NumPy, Matplotlib, Scikit-learn</p>
         </div>
-        <div>
-            <h3>Concepts & Soft Skills</h3>
-            <ul>
-                <li>Regression, Classification, Clustering</li>
-                <li>CNN & NLP</li>
-                <li>Supervised & Unsupervised Learning</li>
-                <li>Communication & Teamwork</li>
-            </ul>
+        <div class="skill-card">
+            <h3>AI & ML Concepts</h3>
+            <p>Regression, Classification, Clustering, CNN, NLP</p>
+        </div>
+        <div class="skill-card">
+            <h3>Soft Skills</h3>
+            <p>Problem Solving, Communication, Teamwork</p>
         </div>
     </div>
 </section>
 
+<!-- ACADEMICS -->
 <section>
     <h2>Academic Information</h2>
     <table>
-        <tr>
-            <th>Year</th>
-            <th>Course</th>
-            <th>Institution</th>
-        </tr>
-        <tr>
-            <td>2011–2024</td>
-            <td>KG to High School</td>
-            <td>CJMA HSS Palikkun</td>
-        </tr>
-        <tr>
-            <td>2024–2026</td>
-            <td>Higher Secondary</td>
-            <td>St. Joseph Velupadam</td>
-        </tr>
-        <tr>
-            <td>2025</td>
-            <td>AI & ML Jr. Telecom Data Analytics</td>
-            <td>SDC Puthukad</td>
-        </tr>
+        <tr><th>Year</th><th>Course</th><th>Institution</th></tr>
+        <tr><td>2011–2024</td><td>KG to High School</td><td>CJMA HSS Palikkun</td></tr>
+        <tr><td>2024–2026</td><td>Higher Secondary</td><td>St. Joseph Velupadam</td></tr>
+        <tr><td>2025</td><td>AI & ML Jr. Telecom Data Analytics</td><td>SDC Puthukad</td></tr>
     </table>
 </section>
 
+<!-- PROJECTS -->
 <section class="projects">
     <h2>Projects</h2>
-    <p><strong>Crop Recommendation System</strong> – Machine learning–based crop prediction system.</p>
+    <p><strong>Crop Recommendation System</strong> – ML-based crop prediction</p>
   
    
 </section>
 
+<!-- CONTACT -->
 <section>
     <h2>Contact</h2>
-    <div class="contact-cards">
+    <div class="contact-grid">
         <div class="contact-card">
             <div class="icon">📞</div>
-            <h3>Phone</h3>
             <p>+91 9846386198</p>
         </div>
-
         <div class="contact-card">
             <div class="icon">📧</div>
-            <h3>Email</h3>
             <p>madhavksangeeth@gmail.com</p>
         </div>
-
         <div class="contact-card">
             <div class="icon">💻</div>
-            <h3>GitHub</h3>
-            <p>
-                <a href="https://github.com/madhavksangeeth" target="_blank">
-                    github.com/madhavksangeeth
-                </a>
-            </p>
+            <a href="https://github.com/madhavksangeeth" target="_blank">
+                github.com/madhavksangeeth
+            </a>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>© 2025 Madhav K Sangeet | AI & ML Junior Data Analyst</p>
+    © 2025 Madhav K Sangeet | AI & ML Portfolio
 </footer>
 
 </body>
