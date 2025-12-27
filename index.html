@@ -7,90 +7,154 @@
 
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
             margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
             background-color: #f4f6f8;
             color: #333;
             line-height: 1.6;
         }
 
+        /* HEADER */
         header {
-            background: linear-gradient(135deg, #1f2933, #111827);
+            background: linear-gradient(135deg, #111827, #1f2933);
             color: #ffffff;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 38px;
         }
 
         header p {
+            margin-top: 10px;
             font-size: 18px;
-            margin-top: 8px;
         }
 
+        /* SECTIONS */
         section {
             max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
+            margin: 40px auto;
+            padding: 50px 25px;
             background: #ffffff;
-            margin-top: 20px;
-            border-radius: 8px;
+            border-radius: 14px;
         }
 
         h2 {
             color: #1f2933;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 8px;
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 40px;
+            position: relative;
         }
 
-        ul {
-            padding-left: 20px;
+        h2::after {
+            content: "";
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, #2563eb, #4f46e5);
+            display: block;
+            margin: 12px auto 0;
+            border-radius: 4px;
         }
 
+        /* SKILLS */
         .skills {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
         }
 
+        /* TABLE */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
         }
 
         table th, table td {
+            padding: 12px;
             border: 1px solid #d1d5db;
-            padding: 10px;
-            text-align: left;
         }
 
         table th {
             background-color: #f3f4f6;
         }
 
+        /* PROJECTS */
         .projects p {
-            margin: 10px 0;
+            margin: 12px 0;
         }
 
-        footer {
+        /* CONTACT SECTION */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: #f9fafb;
+            padding: 35px 25px;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            background-color: #1f2933;
-            color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: slideUp 0.8s ease forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        a {
+        .contact-card:nth-child(1) { animation-delay: 0.2s; }
+        .contact-card:nth-child(2) { animation-delay: 0.4s; }
+        .contact-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 44px;
+            margin-bottom: 18px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #111827;
+        }
+
+        .contact-card p {
+            font-size: 16px;
+            color: #374151;
+            word-break: break-word;
+        }
+
+        .contact-card a {
             color: #2563eb;
+            font-weight: 600;
             text-decoration: none;
         }
 
-        a:hover {
+        .contact-card a:hover {
             text-decoration: underline;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #111827;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -105,12 +169,11 @@
     <h2>About Me</h2>
     <p>
         I am an enthusiastic and detail-oriented student with a strong interest in
-        <strong>Artificial Intelligence and Machine Learning</strong>.
-        I enjoy solving real-world problems using data and building intelligent systems.
-        With hands-on experience in <strong>Python, machine learning libraries, and data analysis</strong>,
-        I am continuously learning and exploring advanced concepts in
-        <strong>Deep Learning and Natural Language Processing</strong>.
-        My goal is to contribute to innovative projects that create meaningful impact.
+        Artificial Intelligence and Machine Learning. I enjoy solving real-world
+        problems using data and building intelligent systems. With hands-on experience
+        in Python, machine learning libraries, and data analysis, I am continuously
+        learning advanced concepts in Deep Learning and NLP. My goal is to contribute
+        to innovative projects that create meaningful impact.
     </p>
 </section>
 
@@ -133,7 +196,7 @@
                 <li>Regression, Classification, Clustering</li>
                 <li>CNN & NLP</li>
                 <li>Supervised & Unsupervised Learning</li>
-                <li>Communication, Teamwork, Problem Solving</li>
+                <li>Communication & Teamwork</li>
             </ul>
         </div>
     </div>
@@ -148,18 +211,18 @@
             <th>Institution</th>
         </tr>
         <tr>
-            <td>2011 – 2024</td>
+            <td>2011–2024</td>
             <td>KG to High School</td>
             <td>CJMA HSS Palikkun</td>
         </tr>
         <tr>
-            <td>2024 – 2026</td>
+            <td>2024–2026</td>
             <td>Higher Secondary</td>
             <td>St. Joseph Velupadam</td>
         </tr>
         <tr>
             <td>2025</td>
-            <td>AI & ML Jr. Telecom Data Analytics Course</td>
+            <td>AI & ML Jr. Telecom Data Analytics</td>
             <td>SDC Puthukad</td>
         </tr>
     </table>
@@ -167,20 +230,40 @@
 
 <section class="projects">
     <h2>Projects</h2>
-    <p><strong>Crop Recommendation System</strong> – Machine learning–based system to recommend suitable crops using soil and climate data.</p>
-    <p><strong>Fake News Detection</strong> – NLP-based project to identify fake news articles.</p>
-    <p><strong>Smart Farming System</strong> – AI and IoT-based intelligent agriculture solution.</p>
+    <p><strong>Crop Recommendation System</strong> – Machine learning–based crop prediction system.</p>
+    <p><strong>Fake News Detection</strong> – NLP-based system for identifying fake news.</p>
+    <p><strong>Smart Farming System</strong> – AI & IoT-based agriculture solution.</p>
 </section>
 
 <section>
     <h2>Contact</h2>
-    <p><strong>Phone:</strong> +91 9846386198</p>
-    <p><strong>Email:</strong> madhavksangeeth@gmail.com</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/" target="_blank">github.com/madhavksangeeth</a></p>
+    <div class="contact-cards">
+        <div class="contact-card">
+            <div class="icon">📞</div>
+            <h3>Phone</h3>
+            <p>+91 9846386198</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="icon">📧</div>
+            <h3>Email</h3>
+            <p>madhavksangeeth@gmail.com</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="icon">💻</div>
+            <h3>GitHub</h3>
+            <p>
+                <a href="https://github.com/madhavksangeeth" target="_blank">
+                    github.com/madhavksangeeth
+                </a>
+            </p>
+        </div>
+    </div>
 </section>
 
 <footer>
-    <p>© 2025 Madhav K Sangeet | AI & ML Jr. Telecom Data Analytics</p>
+    <p>© 2025 Madhav K Sangeet | AI & ML Junior Data Analyst</p>
 </footer>
 
 </body>
